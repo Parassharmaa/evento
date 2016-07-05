@@ -1,5 +1,5 @@
 <?php
-	if (empty($_POST['name'])  || empty($_POST['email']) || empty($_POST['contact']) || empty($_POST['message'])) {
+	if (empty($_POST['name'])  || empty($_POST['email']) || empty($_POST['message'])) {
 		echo "Please fill all the fields";	
 		
 	}

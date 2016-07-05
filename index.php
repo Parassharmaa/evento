@@ -8,6 +8,7 @@
 </head>
 
 <body class="colorido-o">
+	<div id="mail-list">
 	<div class="modal fade" id="new-event" tabindex="-1" role="dialog">
 		  <div class="modal-dialog">
 			<div class="modal-content">
@@ -47,6 +48,7 @@
 			  </div>
 			  <div class="modal-body">
 				<p>All Data Will Be Lost!</p>
+			  <div class="del-status"></div>
 				</div>
 			  <div class="modal-footer"><center>
 			  <div class="row" style="padding:20px">
@@ -61,17 +63,17 @@
 	<div class="colorido container-fluid">
 		<h3 class="text-center">Evento <small class="colorido">Manage with ease!</small></h3>
 	</div>
-	<div class="main-s " id="main-list">
+	<div class="main-s ">
 	<div class="container-fluid  panel panel-body colorido-t">
 			<center><div class="btn btn-info colorido" data-toggle="modal" data-target="#new-event"><span class="ion-plus"></span>&nbsp;&nbsp;Create Event</div></center><br>
-			
-			<ul class="list-group container" style="min-height:30vw">
+			<div id="list-load" class="container">
+			<ul class="list-group" style="min-height:30vw" id="list">
 				<?php 
 					if($result->num_rows>0) {
 						while($data=$result->fetch_assoc()) {
 							?>
 					<li class="list-group-item row e-list">
-					  <h4 class="col-md-6" click-animate="none" click-load="event-control?event_token=<?php echo $data['event_token']; ?>"><span class="badge colorido"><?php echo date("d M, Y",strtotime($data['event_date'])) ?></span><span class="e-title"> <?php echo $data['event_name'];?></span></h4>
+					  <a href="event-control?event_token=<?php echo $data['event_token']; ?>" class="colorido-t"><h4 class="col-md-6"><span class="badge colorido"><?php echo date("d M, Y",strtotime($data['event_date'])) ?></span><span class="e-title"> <?php echo $data['event_name'];?></span></h4></a>
 					  <h4 data-toggle="modal" data-target="#delete-event"  delete-key="<?php echo $data['event_token'];?>" class="col-md-6 ion-trash-a text-right del-icon"></h4>
 				  	</li>
 				<?php
@@ -83,17 +85,17 @@
 				}
 				?>
 			</ul>
-		
+		</div>
 	</div>
 	</div>
 	
 	<div class="colorido container foot-c">
 		<div class="col-md-3">
-			<h5 class="text-center ion-bug"><span  click-animate="none" click-load="report-bug" style="text-decoration:underline"> Report Bug</span></h5> </div>
+			<h5 class="text-center ion-bug"><span  click-animate="none" click-load="report" style="text-decoration:underline"> Report Bug</span></h5> </div>
 		<div class="col-md-offset-9">
 			<h5 class="text-center">&copy; 2016  <span style="font-weight:500">v 0.1.0</span></h5> </div>
 	</div>
-	
+	</div>
 	
 	<?php
 		include 'includes/js.inc.php';

@@ -1,3 +1,13 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+AddType application/x-httpd-php .omr
+# Sets index.omr into default page stack
+DirectoryIndex index.omr index.php index.htm pq.html
+
+# secure htaccess file
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>

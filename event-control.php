@@ -25,12 +25,13 @@
 	</head>
 
 	<body>
-		<div id="re-up">
+		
 		<?php include 'includes/modal-up.inc.php'; ?>
 		<div class="colorido container-fluid">
 			<h3 class="pull-left"><span class="e-title"><?php echo $data['event_name']; ?><span class="badge colorido"><?php echo date("d M, Y",strtotime($data['event_date']));?></span></h3>
 			<h3 class="pull-right" click-animate="none" click-load="index"><span class="ion-android-list"> List</span></h3> </div>
-		<div class="e-content container">
+		<div class="em-main">
+		<div id="re-up" class="e-content container" >
 			<div class="row">
 				<div class="col-md-6">
 					<div class="part panel panel-default">
@@ -84,7 +85,7 @@
 						<div class="panel-heading colorido-t">
 							<h4 class="text-center"><span class="ion-ios-list"></span>  Important Notes</h4> <span class="p-edit ion-plus" data-toggle="modal" data-target="#up-notes"> Add</span> </div>
 						<div class="panel-body">
-							<?php if($data['event_notes'] !=null) { echo "<li>".$data['event_notes']."</li>";} 
+							<?php if($data['event_notes'] !=null) { echo "<h4>".$data['event_notes']."</h4>";} 
 							else {
 								echo "<h4 class='text-center'>No Notes Found</h4>";
 							}  ?>
@@ -93,10 +94,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="colorido container-fluid help-tab">
-			<h5 class="text-center ion-help" click-animate="none" click-load="report-bug">  Help | 
-				<span style="font-weight:500"> v 0.1.0</span></h5> </div>
 		</div>
+		<div class="colorido container-fluid help-tab">
+			<h5 class="text-center ion-help" click-animate="none" click-load="report">  Report Error | 
+				<span style="font-weight:500"> v 0.1.0</span></h5> </div>
+		
 		<?php 
 		include 'includes/js.inc.php';
 	?>

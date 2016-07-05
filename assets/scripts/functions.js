@@ -19,7 +19,10 @@ $(document).ready(function() {
 			}
 			
 			else {
-				$('body').load('index.php#main-list');
+				$('#list-load').load('index.php #list');
+				$('#create').text("Create");
+				$('#event-create')[0].reset();
+				$('.modal').modal('hide');
 			}
 		}
 	})
@@ -27,17 +30,19 @@ $(document).ready(function() {
 	//delete_event
 
 $('[event-delete]').click(function() {
+	$('.del-status').text('Deleting');
 	$target = this.getAttribute('event-delete');
 	$data="token="+$target;
 	$.post('functions/delete_event.php', $data, response);
 	
 	function response(res) {
 		if (res) {
-			$('body').load('index.php#main-list');
+			
+			window.location.href='index';
 		}
 		
 		else {
-			alert('Deletion failed, Try Again')
+			alert('Deletion failed, Try Again');
 		}
 	}
 	
@@ -49,7 +54,7 @@ $('[event-delete]').click(function() {
 //adding hosts/ venue/ notes/ caterer
 $('[data-from]').click(function() {
 	$self  = $(this);
-	$(this).text("Updating");
+	$(this).text("Updating..");
 	$from = this.getAttribute('data-from');
 	$to = this.getAttribute('data-to');
 	$getd = this.getAttribute('data-s');
@@ -70,7 +75,9 @@ $('[data-from]').click(function() {
 			
 			else {
 				
-				$('body').load('event-control.php?event_token='+$getd+'#re-up');
+				$('.em-main').load('event-control.php?event_token='+$getd+' #re-up');
+				$('.modal').modal('hide');
+				$($self).text("Update");
 			}
 		}
 	
@@ -82,5 +89,28 @@ $('[delete-key]').click(function() {
 	$dkey = this.getAttribute('delete-key');
 	$('#confirm').attr('event-delete',$dkey);
 })
+
+
+
+//rep submit
+
+
+$('#rep-submit').click(function() {
+	$data = $('#report').serialize();
+	$.post("functions/bug-report",$data, response);
+	
+	function response(res) {
+		if(res==1) {
+			$('.alert').text(res);
+			 $('#report')[0].reset();
+		}
+		
+		else {
+			$('.alert').text(res);
+			 $('#report')[0].reset();
+		}
+	}
+})
+
 
 })
