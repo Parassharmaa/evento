@@ -1,11 +1,7 @@
 <?php 
 	require_once('../db/connect.php');
 
-	if (empty($_POST['event-notes'])) {
-		
-		echo 0;	
-		
-	}else {
+	
    	$notes = $_POST['event-notes'];
 	$token  = $_POST['token'];
 	
@@ -24,5 +20,5 @@
 		else {
 			echo "error";
 		}
-}
+
 ?>

@@ -1,4 +1,5 @@
 // anchor tag load and animate
+function clickMe() {
 $('a[click-animate]').click(function (e) {
 	e.preventDefault();
 	$next = this.getAttribute("href");
@@ -64,11 +65,42 @@ function clickAll(n) {
 })
 }
 
+}
 
+setInterval(clickMe,500);
 
+	
 $('input, textarea, select').addClass('colorido-t');
 
+//guests
 
+$(function () { $('#myModal').modal({
+      keyboard: true
+   })});
+
+function check() {
+	$('#selectall').on('click',function(){
+        if(this.checked){
+            $(':checkbox').each(function(){
+                this.checked = true;
+            });
+        }else{
+             $(':checkbox').each(function(){
+                this.checked = false;
+            });
+        }
+    });
+    
+    $(':checkbox').on('click',function(){
+        if($(':checkbox:checked').length == $(':checkbox').length){
+            $('#selectall').prop('checked',true);
+        }else{
+            $('#selectall').prop('checked',false);
+        }
+    });
+}
+
+setInterval(check,500);
 //lpader
 
 /*! pace 1.0.0 */

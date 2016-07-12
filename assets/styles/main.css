@@ -1,11 +1,15 @@
-/* line 1, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 1, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 body {
   margin: 0 !important;
   padding: 0;
-  font-family: Roboto;
-  overflow-y: scroll !important; }
+  font-family: Roboto; }
 
-/* line 7, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+@media screen and (max-width: 500px) {
+  /* line 8, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
+  body {
+    overflow-y: scroll; } }
+
+/* line 11, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .top-nav {
   width: 100%;
   margin: 0;
@@ -14,9 +18,9 @@ body {
   line-height: 37px;
   font-size: 30px;
   padding: 5px 0px 5px 0px;
-  box-shadow: 0px 0px 8px 0.3px #222; }
+  box-shadow: 0px 0px 8px 0.3px #222 s; }
 
-/* line 17, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 21, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .cess-card {
   width: 80%;
   margin: auto;
@@ -27,84 +31,95 @@ body {
   min-height: 200px;
   border-radius: 5px; }
 
-/* line 27, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 31, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .btn, input, textarea, select {
-  box-shadow: 0px 2px 8px 0.5px #93969a;
   border-radius: 0 !important;
   font-weight: 500; }
 
-/* line 32, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 35, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
+.btn {
+  box-shadow: 0px 2px 8px 0.5px #93969a; }
+
+/* line 37, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .hid {
   display: none; }
 
-/* line 34, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 39, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .main-s {
   min-height: 40vw;
   margin-bottom: 60px; }
 
-/* line 39, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 44, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .foot-c {
   position: fixed;
   bottom: 0;
   width: 100%; }
 
-/* line 45, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 50, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .del-icon:hover {
   color: #333;
   transition: all 0.4 ease-in-out;
   cursor: pointer; }
 
-/* line 51, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 56, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .e-content {
   padding: 20px; }
 
-/* line 54, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 59, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .modal {
   background-color: black; }
 
-/* line 58, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 63, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .part .panel-body h4 {
   font-size: 15px; }
 
-/* line 60, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 65, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .part .panel-heading {
   display: flex;
   justify-content: space-around; }
 
-/* line 65, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 70, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .panel {
   height: auto; }
-  /* line 67, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+  /* line 72, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
   .panel .icon {
     font-size: 20px; }
 
-/* line 70, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 75, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .help-tab {
   position: fixed;
   bottom: 0;
   right: 0; }
 
-/* line 75, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 80, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .part .panel-heading {
   padding: 1px; }
 
-/* line 77, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 82, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .part .panel-body {
   min-height: 190px !important; }
 
-/* line 80, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 85, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .e-list:hover {
   background: rgba(199, 185, 185, 0.24);
   transition: all 0.4s ease-in-out; }
 
-/* line 83, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 88, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .p-edit {
   font-size: 17px;
   cursor: pointer;
   padding: 10px; }
 
-/* line 87, C:/xampp/htdocs/onpro/event-manager/assets/styles/main.sass */
+/* line 93, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
 .p-edit:hover {
   color: #958888; }
+
+/* line 96, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
+.panel-body {
+  word-wrap: break-word; }
+
+/* line 99, C:/xampp/htdocs/onpro/evento/assets/styles/main.sass */
+.modal-content {
+  border-radius: 0%; }
 
 /*# sourceMappingURL=main.css.map */

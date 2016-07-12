@@ -10,7 +10,7 @@
         //'rgb(230, 74, 25)'
     ], 
     autoChange: true, 
-    autoDuration: 5,  
+    autoDuration: 0.1,  
     animationDuration: 0.3,  
     animationType:"ease-in-out", 
     chromeTab: true 

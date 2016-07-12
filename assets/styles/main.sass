@@ -2,7 +2,11 @@ body
 	margin:0 !important
 	padding:0
 	font-family:Roboto
-	overflow-y:scroll !important
+	
+
+@media screen and (max-width:500px)
+	body
+		overflow-y:scroll 
 	
 .top-nav
 	width:100%
@@ -12,7 +16,7 @@ body
 	line-height:37px
 	font-size:30px
 	padding:5px 0px 5px 0px 
-	box-shadow:0px 0px 8px 0.3px #222
+	box-shadow:0px 0px 8px 0.3px #222s
 
 .cess-card
 	width:80%
@@ -25,10 +29,11 @@ body
 	border-radius:5px
 
 .btn, input, textarea, select
-	box-shadow:0px 2px 8px 0.5px #93969a
+	
 	border-radius:0 !important
 	font-weight:500
-
+.btn
+	box-shadow:0px 2px 8px 0.5px #93969a
 .hid 
 	display:none
 .main-s
@@ -84,6 +89,12 @@ body
 	font-size:17px
 	cursor:pointer
 	padding:10px
+
 .p-edit:hover
 	color:#958888
 
+.panel-body
+	word-wrap:break-word
+
+.modal-content
+	border-radius:0%

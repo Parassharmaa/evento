@@ -61,7 +61,7 @@
 		  </div>
 	</div>
 	<div class="colorido container-fluid">
-		<h3 class="text-center">Evento <small class="colorido">Manage with ease!</small></h3>
+		<h3 class="text-center" click-animate="none" click-load="index">Evento <small class="colorido">Manage with ease!</small></h3>
 	</div>
 	<div class="main-s ">
 	<div class="container-fluid  panel panel-body colorido-t">

@@ -62,6 +62,7 @@ $('[data-from]').click(function() {
 	$data = $datap +"&token="+$getd;
 	$.post("functions/"+$to,$data,response);
 	
+	
 	function response(res) {
 		if(res==0) {
 				$('.alert').text("Please Fill the required fields");
@@ -83,6 +84,41 @@ $('[data-from]').click(function() {
 	
 })
 
+//add guest
+$('[gdata-from]').click(function() {
+	$self  = $(this);
+	$(this).text("Updating..");
+	$from = this.getAttribute('gdata-from');
+	$to = this.getAttribute('gdata-to');
+	$getd = this.getAttribute('gdata-s');
+	$datap = $("#"+$from).serialize();
+	$data = $datap +"&token="+$getd;
+	$.post("functions/"+$to,$data,response);
+
+	
+	function response(res) {
+		if(res==0) {
+				$('.alert').text("Please Fill the required fields");
+				$($self).text("Update");
+			}
+			
+			else if(res=="error") {
+				$('.alert').text("An error occured! please try again");
+				$($self).text("Update");
+			}
+			
+			else {
+				$('.alert').text("Guest Added Succesfully. Add next.");
+				$($self).text("Update");
+				$('.container').load('guests?event_token='+$getd+' #guestUp');
+				$('#'+$from)[0].reset();
+				
+			}
+		}
+	
+})
+
+
 //delete confirmation
 
 $('[delete-key]').click(function() {
@@ -91,6 +127,24 @@ $('[delete-key]').click(function() {
 })
 
 
+//del guest
+$('#delGuest').click(function() {
+	$getd = this.getAttribute('data-s');
+	$data = $('#mdel').serialize();
+	$.post("functions/del_guest",$data, response);
+	
+	function response(res) {
+		if(res) {
+			$('.container').load('guests?event_token='+$getd+' #guestUp');
+			$('.modal').modal('hide');
+			check();
+		}
+		
+		else {
+			alert('delete Failed');
+		}
+	}
+})
 
 //rep submit
 
@@ -111,6 +165,9 @@ $('#rep-submit').click(function() {
 		}
 	}
 })
-
+function alertTime() {
+	$('.alert').text('');
+}
+setInterval(alertTime,5000);
 
 })
